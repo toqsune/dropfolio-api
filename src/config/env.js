@@ -1,6 +1,6 @@
 import logger from "../api/utils/logger.js";
 
-const required = [];
+const required = ["DB_URI"];
 
 required.forEach((var_) => {
   if (!var_ || process.env[var_] === "" || process.env[var_] == null) {
@@ -14,6 +14,7 @@ const env = {
     port: Number(process.env.PORT) || 3000,
     node_env: process.env.NODE_ENV || "development",
     version: process.env.VERSION || "1.0.0",
+    db_uri: process.env.DB_URI,
   },
 };
 
