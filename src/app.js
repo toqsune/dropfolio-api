@@ -10,6 +10,7 @@ import requestId from "./api/middlewares/requestId.middleware.js";
 import httpLogger from "./config/morgan.js";
 import notFoundHandler from "./api/middlewares/notfound.middleware.js";
 import errorHandler from "./api/middlewares/error.middleware.js";
+import router from "./api/routes/index.js";
 
 const app = express();
 
@@ -27,6 +28,7 @@ app.use(cookieParser());
 app.use(compression());
 
 // Routes
+app.use("/api", router);
 
 // Central middlewares
 app.use(notFoundHandler);
